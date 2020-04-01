@@ -34,11 +34,17 @@ a {
   padding-right: 20px;
 }
 
-.navbar-right ul {
+.navbar-right .menu-right {
   display: flex;
 
 }
 
-.navbar-right ul li {
+.navbar-right .menu-right li {
   padding-left: 25px;
+  position: relative;
+}
+
+.dropdown {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  position: absolute;
 }
