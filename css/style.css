@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar-left {
+
+  display: flex;
+}
+
+.navbar-left ul {
+  display: flex;
+  margin-left: 50px;
+}
+
+.navbar-left ul li {
+  padding-right: 20px;
+}
+
+.navbar-right ul {
+  display: flex;
+
+}
+
+.navbar-right ul li {
+  padding-left: 25px;
+}
