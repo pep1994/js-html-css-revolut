@@ -11,6 +11,7 @@ $(document).ready(function(){
 
 
   var navMenu = $('.menu-right > li');
+
   navMenu.on({
 
     // all'hover del mouse sugli elementi del menu di navigazione appare il dropdown-menu e di conseguenza scompaiano i dropodown-menu  degli altri elementi del menu su cui il mouse non ci è andato sopra
@@ -23,6 +24,30 @@ $(document).ready(function(){
     click: function() {
       $(this).children("ul").hide();
     }
+
+  });
+
+
+// al click su qualsiasi parte della finistra i dropdown-menu si chiudono
+  $(document).click(
+    function() {
+      $('.dropdown').hide();
+    }
+  );
+
+  var hamburger = $('.hamburger');
+  hamburger.on({
+
+    mouseenter:
+      function() {
+        $('.hamburger span').css({"background-color": "#000"});
+    },
+
+    mouseleave:
+    function () {
+      $('.hamburger span').css({"background-color": "lightgrey"});
+    }
+
 
   });
 

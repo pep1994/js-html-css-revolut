@@ -7,6 +7,7 @@
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 25px;
@@ -21,8 +22,8 @@ a {
 }
 
 .navbar-left {
-
   display: flex;
+  align-items: center;
 }
 
 .navbar-left ul {
@@ -36,7 +37,7 @@ a {
 
 .navbar-right .menu-right {
   display: flex;
-
+  align-items: center;
 }
 
 .navbar-right .menu-right li {
@@ -47,4 +48,23 @@ a {
 .dropdown {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   position: absolute;
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: lightgrey;
+  margin: 8px;
+}
+
+@media screen and (max-width: 991px) {
+  .hamburger {
+    display: block;
+  }
 }
