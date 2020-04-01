@@ -32,7 +32,7 @@ $(document).ready(function(){
 
 
 // al click su qualsiasi parte della finistra i dropdown-menu si chiudono
-  $(document).click(
+  $(window).click(
     function() {
       $('.dropdown').hide();
     }
@@ -62,11 +62,18 @@ $(document).ready(function(){
   hamburgerMenu.hide();
   hamburgerMenu.addClass("hidden");
 
-  // faccio apparire l'hamburger-menu al click sull'icona hamburger
-  $('.hamburger').click(
+  // faccio apparire l'hamburger-menu al click sull'icona hamburger e la metto in una funzione così da poterla riutilizzare
+
+function iconClick (selectorClick, selectorChange) {
+  $(selectorClick).click(
     function () {
-      $('.hamburger-menu').toggle();
+      $(selectorChange).toggle();
   });
+}
+
+iconClick ('.hamburger', '.hamburger-menu');
+
+
 
   // seleziono tutti gli "li" che sono figli diretti del menu inferiore del dropdown-menu dell'hamburger-menu
   dropdownMenu = $('.hamburger-bottom-menu > li');
@@ -89,6 +96,39 @@ $(document).ready(function(){
   }
 
 });
+
+// modifico l'hover sull'icona "x"
+$('.close').on({
+  mouseenter: function() {
+    $('.close').css({"color": "#000"});
+  },
+  mouseleave: function() {
+    $('.close').css({"color": "lightgrey"});
+  }
+
+});
+
+// faccio scomparire l'hamburger-menu al click sulla "x" attraverso la funzione già creata
+iconClick ('.close', '.hamburger-menu');
+
+// if (ciao === true) {
+//   dropdownMenu.click(
+//     function(){
+//       $(this).children("ul").slideDown();
+//       $(this).siblings("li").children("ul").slideUp();
+//
+//   });
+// ciao = false;
+// }
+//
+//  if (ciao === false) {
+//   $(window).click(
+//     function() {
+//       $('.sub-dropdown').slideUp();
+//
+//     });
+// ciao = true;
+// }
 
 
 });
