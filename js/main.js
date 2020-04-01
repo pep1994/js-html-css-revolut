@@ -6,7 +6,7 @@ cerco di far si che funzioni la questione di far comparire e scomparire ciò che
 
 $(document).ready(function(){
 
-  var navMenu, dropdownMenu;
+  var navMenu, dropdownMenu, hamburgerMenu;
 
   // nascondo tutti i dropdown
   $('.dropdown').hide();
@@ -35,7 +35,6 @@ $(document).ready(function(){
   $(document).click(
     function() {
       $('.dropdown').hide();
-      $('.sub-dropdown').Slidetoggle();
     }
   );
 
@@ -55,6 +54,18 @@ $(document).ready(function(){
       $('.hamburger span').css({"background-color": "lightgrey"});
     }
 
+  });
+
+
+  // nascondo l'hamburger-menu
+  hamburgerMenu = $('.hamburger-menu');
+  hamburgerMenu.hide();
+  hamburgerMenu.addClass("hidden");
+
+  // faccio apparire l'hamburger-menu al click sull'icona hamburger
+  $('.hamburger').click(
+    function () {
+      $('.hamburger-menu').toggle();
   });
 
   // seleziono tutti gli "li" che sono figli diretti del menu inferiore del dropdown-menu dell'hamburger-menu

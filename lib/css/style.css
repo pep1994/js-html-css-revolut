@@ -72,6 +72,10 @@ a {
   margin: 6px;
 }
 
+.hamburger-menu li {
+  cursor: pointer;
+}
+
 .hamburger-menu-top {
   border-bottom: solid 1px black;
 }
@@ -90,9 +94,6 @@ a {
 }
 
 @media screen and (min-width: 992px) {
-  .visible {
-    display: block;
-  }
 
   .hidden {
     display: none;
