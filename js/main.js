@@ -35,6 +35,7 @@ $(document).ready(function(){
   $(window).click(
     function() {
       $('.dropdown').hide();
+      $('.sub-dropdown').slideUp();
     }
   );
 
@@ -90,9 +91,10 @@ iconClick ('.hamburger', '.hamburger-menu');
   },
 
   // al click del mouse sugli elementi del menu di navigazione scompare il dropdown-menu
-  click: function() {
+  click: function(event) {
     $(this).children("ul").slideToggle();
     $(this).siblings("li").children("ul").slideUp();
+    event.stopPropagation(); // stoppa l'esecuzione di un evento del padre
   }
 
 });
